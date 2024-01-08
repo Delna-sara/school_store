@@ -1,0 +1,49 @@
+<!-- mainapp/templates/mainapp/new_page.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Page</title>
+        <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        form {
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+   <form action="{% url 'form_page' %}"  method="post">
+    {% csrf_token %}
+<!--        <button type="submit">Open Form</button>-->
+<!--    <button onclick="window.location.href="{% url 'login' %}">Open Form</button>-->
+           <button onclick="window.location.href='{% url 'form_page' %}'">Open Form</button>
+
+   </form>
+
+</body>
+</html>

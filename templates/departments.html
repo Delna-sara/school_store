@@ -1,0 +1,65 @@
+<!-- departments.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 10px 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007bff;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #0056b3;
+        }
+
+        a.return-home {
+            display: block;
+            margin-top: 20px;
+            color: #28a745;
+            text-decoration: none;
+            padding: 10px;
+            border: 1px solid #28a745;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        a.return-home:hover {
+            background-color: #218838;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <h1>Departments</h1>
+    <ul>
+        {% for department in departments %}
+            <li><a href="{{ department.wikipedia_link }}" target="_blank">{{ department.name }}</a></li>
+        {% endfor %}
+    </ul>
+        <a href="{% url 'base' %}">Return to Home</a>
+
+</body>
+</html>
